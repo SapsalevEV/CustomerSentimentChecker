@@ -1,0 +1,6 @@
+---
+description: 
+globs: **/pyproject.toml
+alwaysApply: false
+---
+- **Dependency Management:** Poetry / Rye

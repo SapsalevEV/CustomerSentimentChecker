@@ -1,0 +1,45 @@
+# LLM Configuration
+models:
+  default: "gpt-oss:20b"
+  alternatives:
+    - name: "mistral"
+      description: "Smaller but faster model"
+    - name: "phi3"
+      description: "Compact model for lighter workloads"
+
+# Model parameters
+parameters:
+  default:
+    temperature: 0.7
+    top_p: 0.9
+    max_tokens: 2000
+  
+  # Specific model overrides
+  model_specific:
+    llama3:
+      temperature: 0.6
+      top_p: 0.95
+    mistral:
+      temperature: 0.7
+      top_p: 0.9
+    phi3:
+      temperature: 0.8
+      top_p: 0.85
+
+# Resource allocation
+resources:
+  gpu: true
+  cpu_threads: 8
+  max_memory: "8GiB"
+
+# Ollama configuration
+ollama:
+  base_url: "http://127.0.0.1:11434"
+  timeout: 60
+
+# Security settings
+security:
+  api_access:
+    enable_authentication: false
+    api_key_required: false
+    allowed_origins: ["localhost"]
