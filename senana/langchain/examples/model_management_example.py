@@ -86,7 +86,116 @@ def main():
         if llm:
             # Use the model for a simple inference
             logger.info("Running inference...")
-            prompt = "Analyze the sentiment in this review: I absolutely love this product!"
+            prompt = """Ты — экспертный ИИ-аналитик, специализирующийся на обработке клиентских отзывов для банков. Твоя задача — проводить детальный, аспектно-ориентированный анализ текста, который предоставляет пользователь. Ты должен выявлять ключевые продукты и услуги, о которых говорит клиент, определять тональность его высказываний по каждому аспекту и классифицировать суть проблем.
+
+Твой ответ ДОЛЖЕН быть предоставлен ИСКЛЮЧИТЕЛЬНО в формате JSON, который строго соответствует следующей Pydantic-схеме. Не добавляй никаких комментариев, объяснений или вводных фраз вне самой JSON-структуры.
+
+<JSON_SCHEMA>
+{
+"title": "FullReviewAnalysis",
+"description": "Полная структурированная анкета для одного отзыва клиента.",
+"type": "object",
+"properties": {
+"review_source": {
+"description": "Источник отзыва (например, 'Google Play', 'VK', 'App Store'). Если источник неизвестен, укажи 'Неизвестно'.",
+"title": "Review Source",
+"type": "string"
+},
+"timestamp": {
+"description": "Дата и время проведения анализа в формате ISO 8601.",
+"title": "Timestamp",
+"type": "string",
+"format": "date-time"
+},
+"overall_sentiment": {
+"description": "Общая итоговая тональность всего отзыва.",
+"title": "Overall Sentiment",
+"enum": [
+"positive",
+"negative",
+"mixed"
+]
+},
+"aspect_analysis": {
+"description": "Список всех упомянутых в отзыве аспектов и их детальный анализ. ",
+"title": "Aspect Analysis",
+"type": "array",
+"items": {
+"$ref": "#/definitions/AspectAnalysis"
+}
+},
+"summary": {
+"description": "Краткое резюме отзыва в 1-2 предложениях для быстрого понимания сути.",
+"title": "Summary",
+"type": "string"
+}
+},
+"required": [
+"review_source",
+"timestamp",
+"overall_sentiment",
+"aspect_analysis",
+"summary"
+],
+"definitions": {
+"AspectAnalysis": {
+"title": "AspectAnalysis",
+"type": "object",
+"properties": {
+"aspect_category": {
+"description": "Общая категория банковского продукта или услуги.",
+"title": "Aspect Category",
+"enum": [
+"Мобильное приложение",
+"Кредитные карты",
+"Дебетовые карты",
+"Вклады и счета",
+"Ипотека",
+"Обслуживание в отделении",
+"Служба поддержки",
+"Банкоматы"
+]
+},
+"specific_mention": {
+"description": "Точная цитата или краткое описание аспекта, упомянутого клиентом (например, 'кешбэк', 'очередь', 'интерфейс перевода денег').",
+"title": "Specific Mention",
+"type": "string"
+},
+"sentiment": {
+[cite_start]"description": "Тональность мнения клиента именно об этом аспекте. ",
+"title": "Sentiment",
+"enum": [
+"positive",
+"negative",
+"neutral"
+]
+},
+"problem_type": {
+"description": "Классификация сути проблемы, если она была высказана.",
+"title": "Problem Type",
+"enum": [
+"Техническая ошибка / Баг",
+"Неудобный интерфейс / UX",
+"Плохое качество обслуживания",
+"Невыгодные условия / Тарифы",
+"Недостаток функционала",
+"Другое",
+"Нет проблемы"
+]
+}
+},
+"required": [
+"aspect_category",
+"specific_mention",
+"sentiment",
+"problem_type"
+]
+}
+}
+}
+</JSON_SCHEMA>
+Проанализируй следующий отзыв:
+'{Если у вас несколько счетов и вкладов на млрд руб. и вы вдруг пропустили штраф, допустим 500₽, который ушел к приставам, то по их наставлению банк спишет деньги и со счетов и с вкладов (без снятия и пополнения), тем самым оставив проценты себе, а Вам предложит передать привет фссп рф. Кстати, если вы положили валюту на счет и открыли Юнион пэй карту, то теперь можете только обменять их на рубли по курсу банка ! А уже банк махнет их по ЦБ и Вам опять спасибо.}'"""
             
             try:
                 result = llm.invoke(prompt)
