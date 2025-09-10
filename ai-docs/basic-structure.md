@@ -1,77 +1,77 @@
-# Project Basic Structure
+# Базовая структура проекта
 
-This document outlines the basic structure of the `senana/langchain` project.
+Этот документ описывает базовую структуру проекта `senana/langchain`.
 
-## Overview
+## Обзор
 
-The project is designed to interact with Large Language Models (LLMs) through the Ollama service. It is structured to be modular, with clear separation of concerns for configuration, model management, and application logic.
+Проект предназначен для взаимодействия с большими языковыми моделями (LLM) через сервис Ollama. Он имеет модульную структуру с четким разделением ответственности для конфигурации, управления моделями и логики приложения.
 
-## Directory Structure
+## Структура директорий
 
-The main project code is located under `senana/langchain/`. Here is a breakdown of the key directories and their purpose:
+Основной код проекта находится в `senana/langchain/`. Ниже представлен обзор ключевых директорий и их назначение:
 
 ### `senana/langchain/app/`
 
-This directory is intended for the application's entry point, likely a web service.
+Эта директория предназначена для точки входа приложения, вероятно веб-сервиса.
 
--   **`app/main.py`**: The main file to launch the application (e.g., a FastAPI app). Currently, it is empty.
--   **`app/api/v1/`**: This sub-directory is intended to hold the API definitions.
-    -   **`endpoints.py`**: Contains API endpoint definitions. Currently, it is empty.
+-   **`app/main.py`**: Главный файл для запуска приложения (например, FastAPI приложение). В настоящее время пустой.
+-   **`app/api/v1/`**: Эта поддиректория предназначена для хранения определений API.
+    -   **`endpoints.py`**: Содержит определения API эндпоинтов. В настоящее время пустой.
 
 ### `senana/langchain/configs/`
 
-This directory contains all configuration files for the project.
+Эта директория содержит все конфигурационные файлы проекта.
 
--   **`llm_config.yml`**: The primary configuration file for LLMs. It defines:
-    -   The default model and a list of alternative models.
-    -   Default and model-specific parameters (e.g., `temperature`, `top_p`).
-    -   Ollama server connection details (`base_url`, `timeout`).
--   **`prompts.yml`**: Intended for storing prompt templates. Currently, it is empty.
+-   **`llm_config.yml`**: Основной конфигурационный файл для LLM. Он определяет:
+    -   Модель по умолчанию и список альтернативных моделей.
+    -   Параметры по умолчанию и специфичные для модели (например, `temperature`, `top_p`).
+    -   Детали подключения к серверу Ollama (`base_url`, `timeout`).
+-   **`prompts.yml`**: Предназначен для хранения шаблонов промптов. В настоящее время пустой.
 
 ### `senana/langchain/src/`
 
-This is the main source code directory, organized into sub-modules.
+Это основная директория исходного кода, организованная в подмодули.
 
 #### `src/core/`
 
-This module is intended for the core business logic of the application. The files are currently empty placeholders.
+Этот модуль предназначен для основной бизнес-логики приложения. Файлы в настоящее время являются пустыми заглушками.
 
--   **`agents.py`**: Intended for defining AI agents.
--   **`orchestration.py`**: Intended for orchestrating workflows between different components.
--   **`pipelines.py`**: Intended for defining data processing pipelines.
+-   **`agents.py`**: Предназначен для определения AI агентов.
+-   **`orchestration.py`**: Предназначен для оркестрации рабочих процессов между различными компонентами.
+-   **`pipelines.py`**: Предназначен для определения конвейеров обработки данных.
 
 #### `src/data_processing/`
 
-This module is for data ingestion and preprocessing. The files are currently empty placeholders.
+Этот модуль предназначен для получения и предварительной обработки данных. Файлы в настоящее время являются пустыми заглушками.
 
--   **`ingestion.py`**: For loading data from various sources.
--   **`preprocessing.py`**: For cleaning and transforming data.
+-   **`ingestion.py`**: Для загрузки данных из различных источников.
+-   **`preprocessing.py`**: Для очистки и преобразования данных.
 
 #### `src/llm/`
 
-This is the most developed module, responsible for all interactions with LLMs.
+Это наиболее разработанный модуль, отвечающий за все взаимодействия с LLM.
 
--   **`model_loader.py`**: Contains `ModelLoader`, a class responsible for:
-    -   Connecting to the Ollama server.
-    -   Loading LLM models using `langchain-ollama`.
-    -   Checking which models are available on the server.
--   **`model_registry.py`**: Contains `ModelRegistry`, a class that:
-    -   Loads model definitions from `llm_config.yml`.
-    -   Manages a registry of all known models and their metadata.
-    -   Tracks the availability of models.
--   **`model_configurator.py`**: Contains `ModelConfigurator`, a class for:
-    -   Creating runtime configurations for models.
-    -   Merging default parameters with model-specific and user-provided overrides.
+-   **`model_loader.py`**: Содержит `ModelLoader`, класс, отвечающий за:
+    -   Подключение к серверу Ollama.
+    -   Загрузку LLM моделей с использованием `langchain-ollama`.
+    -   Проверку доступных моделей на сервере.
+-   **`model_registry.py`**: Содержит `ModelRegistry`, класс, который:
+    -   Загружает определения моделей из `llm_config.yml`.
+    -   Управляет реестром всех известных моделей и их метаданных.
+    -   Отслеживает доступность моделей.
+-   **`model_configurator.py`**: Содержит `ModelConfigurator`, класс для:
+    -   Создания конфигураций времени выполнения для моделей.
+    -   Объединения параметров по умолчанию с специфичными для модели и пользовательскими переопределениями.
 
 #### `src/utils/`
 
-This module contains utility classes and functions used across the project.
+Этот модуль содержит утилитарные классы и функции, используемые в проекте.
 
--   **`config_loader.py`**: Provides `ConfigLoader` for loading YAML configuration files. It includes logic to find configuration files in various project locations.
--   **`config_manager.py`**: A singleton `ConfigManager` class that provides centralized access to configuration values from `llm_config.yml` and other config files.
--   **`parsers.py`**: Intended for data parsing functions. Currently, it is empty.
+-   **`config_loader.py`**: Предоставляет `ConfigLoader` для загрузки YAML конфигурационных файлов. Включает логику для поиска конфигурационных файлов в различных местах проекта.
+-   **`config_manager.py`**: Синглтон класс `ConfigManager`, который обеспечивает централизованный доступ к значениям конфигурации из `llm_config.yml` и других конфигурационных файлов.
+-   **`parsers.py`**: Предназначен для функций парсинга данных. В настоящее время пустой.
 
-### Root Files
+### Корневые файлы
 
--   **`pyproject.toml`**: Project definition file for dependency management with tools like Poetry or Rye. Currently, it is empty.
--   **`requirements.txt`**: A standard Python dependency file.
+-   **`pyproject.toml`**: Файл определения проекта для управления зависимостями с помощью инструментов типа Poetry или Rye. В настоящее время пустой.
+-   **`requirements.txt`**: Стандартный файл зависимостей Python.
