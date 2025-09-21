@@ -1,0 +1,144 @@
+2025-09-22 00:16:58,808 [ERROR] __main__: Ошибка в многопоточной обработке: 1 validation error for Prediction
+id
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.11/v/int_type
+2025-09-22 00:19:10,289 [ERROR] __main__: Ошибка в многопоточной обработке: 1 validation error for Prediction
+id
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.11/v/int_type
+2025-09-22 00:27:00,436 [ERROR] __main__: Ошибка в многопоточной обработке: 1 validation error for Prediction
+id
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.11/v/int_type
+2025-09-22 00:30:27,571 [ERROR] __main__: Ошибка в многопоточной обработке: 1 validation error for Prediction
+id
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.11/v/int_type
+2025-09-22 00:33:13,724 [INFO] processor.review_processor: ✅ Получен корректный формат данных.
+2025-09-22 00:33:14,690 [ERROR] __main__: Ошибка в многопоточной обработке: 1 validation error for Prediction
+id
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.11/v/int_type
+2025-09-22 00:33:48,864 [INFO] processor.review_processor: ✅ Проверка входных данных...
+2025-09-22 00:33:48,865 [INFO] processor.review_processor: ✅ Получен корректный формат данных.
+2025-09-22 00:33:49,915 [ERROR] __main__: Ошибка в многопоточной обработке: 1 validation error for Prediction
+id
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.11/v/int_type
+2025-09-22 00:34:37,705 [DEBUG] processor.review_processor: ✅ Проверка входных данных...
+2025-09-22 00:34:37,705 [DEBUG] processor.review_processor: ✅ Получен корректный формат данных.
+2025-09-22 00:34:37,706 [DEBUG] asyncio: Using selector: EpollSelector
+2025-09-22 00:34:37,707 [DEBUG] grpc._cython.cygrpc: Using AsyncIOEngine.POLLER as I/O engine
+2025-09-22 00:34:38,674 [ERROR] __main__: Ошибка в многопоточной обработке: 1 validation error for Prediction
+id
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.11/v/int_type
+2025-09-22 00:50:11,498 [DEBUG] processor.review_processor: ✅ Проверка входных данных...
+2025-09-22 00:50:11,499 [DEBUG] processor.review_processor: ✅ Получен корректный формат данных.
+2025-09-22 00:50:11,499 [DEBUG] processor.review_processor: ✅ Подготовлены данные для обработки: {1: 'Не могу дозвониться до поддержки.', 2: 'Карта не работает за границей.'}
+2025-09-22 00:50:11,499 [DEBUG] asyncio: Using selector: EpollSelector
+2025-09-22 00:50:11,501 [DEBUG] grpc._cython.cygrpc: Using AsyncIOEngine.POLLER as I/O engine
+2025-09-22 00:50:12,559 [ERROR] __main__: Ошибка в многопоточной обработке: 1 validation error for Prediction
+id
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.11/v/int_type
+2025-09-22 00:51:55,004 [DEBUG] processor.review_processor: ✅ Проверка входных данных...
+2025-09-22 00:51:55,004 [DEBUG] processor.review_processor: ✅ Получен корректный формат данных.
+2025-09-22 00:51:55,004 [DEBUG] processor.review_processor: ✅ Подготовлены данные для обработки: {1: 'Не могу дозвониться до поддержки.', 2: 'Карта не работает за границей.'}
+2025-09-22 00:51:55,004 [DEBUG] processor.review_processor: 🧵 Готовим задачу: item_id=1, тип=<class 'int'>, текст='Не могу дозвониться до поддержки....'
+2025-09-22 00:51:55,005 [DEBUG] asyncio: Using selector: EpollSelector
+2025-09-22 00:51:55,005 [DEBUG] processor.review_processor: 🧵 Готовим задачу: item_id=2, тип=<class 'int'>, текст='Карта не работает за границей....'
+2025-09-22 00:51:55,006 [DEBUG] grpc._cython.cygrpc: Using AsyncIOEngine.POLLER as I/O engine
+2025-09-22 00:51:55,981 [ERROR] __main__: Ошибка в многопоточной обработке: 1 validation error for Prediction
+id
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.11/v/int_type
+2025-09-22 00:55:36,674 [DEBUG] processor.review_processor: ✅ Проверка входных данных...
+2025-09-22 00:55:36,674 [DEBUG] processor.review_processor: ✅ Получен корректный формат данных.
+2025-09-22 00:55:36,675 [DEBUG] processor.review_processor: 🧵 Готовим задачу: item_id=1, тип=<class 'int'>, текст='Не могу дозвониться до поддержки....'
+2025-09-22 00:55:36,675 [DEBUG] asyncio: Using selector: EpollSelector
+2025-09-22 00:55:36,675 [DEBUG] processor.review_processor: 🧵 Готовим задачу: item_id=2, тип=<class 'int'>, текст='Карта не работает за границей....'
+2025-09-22 00:55:36,676 [DEBUG] grpc._cython.cygrpc: Using AsyncIOEngine.POLLER as I/O engine
+2025-09-22 00:55:37,628 [DEBUG] processor.review_processor: ✅ Получены результаты обработки.
+2025-09-22 00:55:37,628 [ERROR] __main__: Ошибка в многопоточной обработке: 1 validation error for Prediction
+id
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.11/v/int_type
+2025-09-22 00:59:31,784 [DEBUG] processor.review_processor: ✅ Проверка входных данных...
+2025-09-22 00:59:31,784 [DEBUG] processor.review_processor: ✅ Получен корректный формат данных.
+2025-09-22 00:59:31,784 [DEBUG] processor.review_processor: 🧵 Готовим задачу: item_id=1, тип=<class 'int'>, текст='Не могу дозвониться до поддержки....'
+2025-09-22 00:59:31,785 [DEBUG] asyncio: Using selector: EpollSelector
+2025-09-22 00:59:31,785 [DEBUG] processor.review_processor: 🧵 Готовим задачу: item_id=2, тип=<class 'int'>, текст='Карта не работает за границей....'
+2025-09-22 00:59:31,786 [DEBUG] grpc._cython.cygrpc: Using AsyncIOEngine.POLLER as I/O engine
+2025-09-22 00:59:32,793 [DEBUG] processor.review_processor: ✅ Получены результаты обработки.
+2025-09-22 00:59:32,793 [ERROR] __main__: Ошибка в многопоточной обработке: 1 validation error for Prediction
+id
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.11/v/int_type
+2025-09-22 01:10:35,916 [DEBUG] processor.review_processor: ✅ Проверка входных данных...
+2025-09-22 01:10:35,917 [DEBUG] processor.review_processor: ✅ Получен корректный формат данных.
+2025-09-22 01:10:35,917 [DEBUG] processor.review_processor: 🧵 Готовим задачу: item_id=44, тип=<class 'int'>, текст='Не могу дозвониться до поддержки....'
+2025-09-22 01:10:35,917 [DEBUG] asyncio: Using selector: EpollSelector
+2025-09-22 01:10:35,917 [DEBUG] processor.review_processor: 🧵 Готовим задачу: item_id=55, тип=<class 'int'>, текст='Карта не работает за границей....'
+2025-09-22 01:10:35,918 [DEBUG] grpc._cython.cygrpc: Using AsyncIOEngine.POLLER as I/O engine
+2025-09-22 01:10:36,902 [DEBUG] processor.review_processor: ✅ Получены результаты обработки.
+2025-09-22 01:10:36,902 [ERROR] __main__: Ошибка в многопоточной обработке: 1 validation error for Prediction
+id
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.11/v/int_type
+2025-09-22 01:19:55,629 [DEBUG] processor.review_processor: ✅ Проверка входных данных...
+2025-09-22 01:19:55,629 [DEBUG] processor.review_processor: ✅ Получен корректный формат данных.
+2025-09-22 01:19:55,629 [DEBUG] processor.review_processor: 🧵 Готовим задачу: item_id=44, тип=<class 'int'>, текст='Не могу дозвониться до поддержки....'
+2025-09-22 01:19:55,630 [DEBUG] asyncio: Using selector: EpollSelector
+2025-09-22 01:19:55,630 [DEBUG] processor.review_processor: 🧵 Готовим задачу: item_id=55, тип=<class 'int'>, текст='Карта не работает за границей....'
+2025-09-22 01:19:55,631 [DEBUG] grpc._cython.cygrpc: Using AsyncIOEngine.POLLER as I/O engine
+2025-09-22 01:19:56,695 [DEBUG] processor.review_processor: ✅ Получены результаты обработки.
+2025-09-22 01:21:09,990 [DEBUG] processor.review_processor: ✅ Проверка входных данных...
+2025-09-22 01:21:09,990 [DEBUG] processor.review_processor: ✅ Получен корректный формат данных.
+2025-09-22 01:21:09,990 [DEBUG] processor.review_processor: 🧵 Готовим задачу: item_id=44, тип=<class 'int'>, текст='Не могу дозвониться до поддержки....'
+2025-09-22 01:21:09,991 [DEBUG] asyncio: Using selector: EpollSelector
+2025-09-22 01:21:09,991 [DEBUG] processor.review_processor: 🧵 Готовим задачу: item_id=55, тип=<class 'int'>, текст='Карта не работает за границей....'
+2025-09-22 01:21:09,992 [DEBUG] grpc._cython.cygrpc: Using AsyncIOEngine.POLLER as I/O engine
+2025-09-22 01:21:11,038 [DEBUG] processor.review_processor: ✅ Получены результаты обработки.
+2025-09-22 01:23:40,708 [DEBUG] processor.review_processor: ✅ Проверка входных данных...
+2025-09-22 01:23:40,708 [DEBUG] processor.review_processor: ✅ Получен корректный формат данных.
+2025-09-22 01:23:40,708 [DEBUG] processor.review_processor: 🧵 Готовим задачу: item_id=44, тип=<class 'int'>, текст='Не могу дозвониться до поддержки....'
+2025-09-22 01:23:40,708 [DEBUG] asyncio: Using selector: EpollSelector
+2025-09-22 01:23:40,709 [DEBUG] processor.review_processor: 🧵 Готовим задачу: item_id=55, тип=<class 'int'>, текст='Карта не работает за границей....'
+2025-09-22 01:23:40,709 [DEBUG] grpc._cython.cygrpc: Using AsyncIOEngine.POLLER as I/O engine
+2025-09-22 01:23:41,671 [DEBUG] processor.review_processor: ✅ Получены результаты обработки.
+2025-09-22 01:24:36,621 [DEBUG] processor.review_processor: ✅ Проверка входных данных...
+2025-09-22 01:24:36,621 [DEBUG] processor.review_processor: ✅ Получен корректный формат данных.
+2025-09-22 01:24:36,621 [DEBUG] processor.review_processor: 🧵 Готовим задачу: item_id=44, тип=<class 'int'>, текст='Не могу дозвониться до поддержки....'
+2025-09-22 01:24:36,622 [DEBUG] asyncio: Using selector: EpollSelector
+2025-09-22 01:24:36,622 [DEBUG] processor.review_processor: 🧵 Готовим задачу: item_id=55, тип=<class 'int'>, текст='Карта не работает за границей....'
+2025-09-22 01:24:36,623 [DEBUG] grpc._cython.cygrpc: Using AsyncIOEngine.POLLER as I/O engine
+2025-09-22 01:24:37,563 [DEBUG] processor.review_processor: ✅ Получены результаты обработки.
+2025-09-22 01:26:22,935 [DEBUG] processor.review_processor: ✅ Проверка входных данных...
+2025-09-22 01:26:22,935 [DEBUG] processor.review_processor: ✅ Получен корректный формат данных.
+2025-09-22 01:26:22,935 [DEBUG] processor.review_processor: 🧵 Готовим задачу: item_id=44, тип=<class 'int'>, текст='Не могу дозвониться до поддержки....'
+2025-09-22 01:26:22,936 [DEBUG] asyncio: Using selector: EpollSelector
+2025-09-22 01:26:22,936 [DEBUG] processor.review_processor: 🧵 Готовим задачу: item_id=55, тип=<class 'int'>, текст='Карта не работает за границей....'
+2025-09-22 01:26:22,937 [DEBUG] grpc._cython.cygrpc: Using AsyncIOEngine.POLLER as I/O engine
+2025-09-22 01:26:23,977 [DEBUG] processor.review_processor: ✅ Получены результаты обработки.
+2025-09-22 01:27:18,626 [DEBUG] processor.review_processor: ✅ Проверка входных данных...
+2025-09-22 01:27:18,627 [DEBUG] processor.review_processor: ✅ Получен корректный формат данных.
+2025-09-22 01:27:18,627 [DEBUG] processor.review_processor: 🧵 Готовим задачу: item_id=44, тип=<class 'int'>, текст='Не могу дозвониться до поддержки....'
+2025-09-22 01:27:18,627 [DEBUG] asyncio: Using selector: EpollSelector
+2025-09-22 01:27:18,627 [DEBUG] processor.review_processor: 🧵 Готовим задачу: item_id=55, тип=<class 'int'>, текст='Карта не работает за границей....'
+2025-09-22 01:27:18,628 [DEBUG] grpc._cython.cygrpc: Using AsyncIOEngine.POLLER as I/O engine
+2025-09-22 01:27:19,538 [DEBUG] processor.review_processor: ✅ Получены результаты обработки.
+2025-09-22 01:29:39,904 [DEBUG] processor.review_processor: ✅ Проверка входных данных...
+2025-09-22 01:29:39,904 [DEBUG] processor.review_processor: ✅ Получен корректный формат данных.
+2025-09-22 01:29:39,904 [DEBUG] processor.review_processor: 🧵 Готовим задачу: item_id=44, тип=<class 'int'>, текст='Не могу дозвониться до поддержки....'
+2025-09-22 01:29:39,904 [DEBUG] asyncio: Using selector: EpollSelector
+2025-09-22 01:29:39,905 [DEBUG] processor.review_processor: 🧵 Готовим задачу: item_id=55, тип=<class 'int'>, текст='Карта не работает за границей....'
+2025-09-22 01:29:39,906 [DEBUG] grpc._cython.cygrpc: Using AsyncIOEngine.POLLER as I/O engine
+2025-09-22 01:29:40,895 [DEBUG] processor.review_processor: ✅ Получены результаты обработки.
+2025-09-22 01:31:08,516 [DEBUG] processor.review_processor: ✅ Проверка входных данных...
+2025-09-22 01:31:08,516 [DEBUG] processor.review_processor: ✅ Получен корректный формат данных.
+2025-09-22 01:31:08,516 [DEBUG] processor.review_processor: 🧵 Готовим задачу: item_id=44, тип=<class 'int'>, текст='Не могу дозвониться до поддержки. Пришлось ехать в...'
+2025-09-22 01:31:08,517 [DEBUG] asyncio: Using selector: EpollSelector
+2025-09-22 01:31:08,517 [DEBUG] processor.review_processor: 🧵 Готовим задачу: item_id=55, тип=<class 'int'>, текст='Карта не работает за границей....'
+2025-09-22 01:31:08,518 [DEBUG] grpc._cython.cygrpc: Using AsyncIOEngine.POLLER as I/O engine
+2025-09-22 01:31:09,984 [DEBUG] processor.review_processor: ✅ Получены результаты обработки.
