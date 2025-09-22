@@ -36,36 +36,36 @@ class YaReviewProcessor:
         Принимает и возвращает словари. Формат входного и выходного словарей задается в api_formatter
         """
         results = []
-        # проверяем входные данные на соответствие шаблону. приводим к единому формату {id : отзыв}
-        logger.debug("✅ Проверка входных данных...")
-        user_prompts_formatted = self.formatter.format_input(user_prompts)
-        logger.debug("✅ Получен корректный формат данных.")
-        if "errors" in user_prompts_formatted.keys():
-            logger.warning(f'❌ Ошибка при обработке: {user_prompts_formatted["errors"]}')
-            results.append(user_prompts_formatted)
-            return self.formatter.format_output(results)
+        try:
+            # проверяем входные данные на соответствие шаблону. приводим к единому формату {id : отзыв}
+            user_prompts_formatted = self.formatter.format_input(user_prompts)
 
-        # запускаем обработку в потоках
-        with ThreadPoolExecutor(max_workers=max_workers) as executor:
-            # Создаём задачи: submit(метод, user_prompt, system_prompt, item_id)
-            future_to_id = {}
+            # запускаем обработку в потоках
+            with ThreadPoolExecutor(max_workers=max_workers) as executor:
+                # Создаём задачи: submit(метод, user_prompt, system_prompt, item_id)
+                future_to_id = {}
 
-            for item_id, text in user_prompts_formatted.items():
-                logger.debug(f"🧵 Готовим задачу: item_id={item_id}, тип={type(item_id)}, текст='{text[:50]}...'")
-                future = executor.submit(self.process_item, text, system_prompt, item_id)
-                future_to_id[future] = item_id
+                for item_id, text in user_prompts_formatted.items():
+                    logger.debug(f"🧵 Готовим задачу: item_id={item_id}, тип={type(item_id)}, текст='{text[:50]}...'")
+                    future = executor.submit(self.process_item, text, system_prompt, item_id)
+                    future_to_id[future] = item_id
 
-            # Собираем результаты по мере готовности
-            for future in as_completed(future_to_id):
-                try:
-                    result = future.result()
-                    results.append(result)
-                except Exception as e:
-                    item_id = future_to_id[future]
-                    logger.error(f"❌ Ошибка при обработке item_id={item_id}: {e}")
-                    results.append({
-                        item_id : []
-                    })
+                # Собираем результаты по мере готовности
+                for future in as_completed(future_to_id):
+                    try:
+                        result = future.result()
+                        results.append(result)
+                    except Exception as e:
+                        item_id = future_to_id[future]
+                        logger.error(f"❌ Ошибка при обработке item_id={item_id}: {e}")
+                        results.append({
+                            item_id : []
+                        })
+
+        except Exception as e:
+            logger.error(f'❌ Ошибка при валидации входных данных: {e}')
+            results.append({"errors": str(e)})
+
         # возвращаем текст в нужном формате
         logger.debug('✅ Получены результаты обработки.')
         return self.formatter.format_output(results)

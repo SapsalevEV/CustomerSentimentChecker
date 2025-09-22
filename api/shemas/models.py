@@ -22,5 +22,5 @@ class Prediction(BaseModel):
 
 class OutputData(BaseModel):
     predictions: List[Prediction] = Field(default_factory=list)
-    errors: Optional[str] = None
+    warnings: Optional[str] = None
     timestamp: Optional[str] = None

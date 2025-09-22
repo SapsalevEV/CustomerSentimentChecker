@@ -180,3 +180,7 @@ id
 2025-09-23 00:16:46,324 [WARNING] processor.review_processor: ❌ Ошибка при обработке: Невалидные данные: data: Field required
 2025-09-23 00:17:16,297 [WARNING] processor.review_processor: ❌ Ошибка при обработке: Ошибка обработки ввода: keywords must be strings
 2025-09-23 00:17:47,548 [WARNING] processor.review_processor: ❌ Ошибка при обработке: Ошибка обработки ввода: shemas.models.InputData() argument after ** must be a mapping, not int
+2025-09-23 00:55:17,856 [WARNING] processor.review_processor: ❌ Ошибка при валидации входных данных: Невалидные данные: data: Field required
+2025-09-23 00:55:37,555 [WARNING] processor.review_processor: ❌ Ошибка при валидации входных данных: Ошибка обработки ввода: keywords must be strings
+2025-09-23 00:58:40,607 [ERROR] processor.review_processor: ❌ Ошибка при валидации входных данных: Невалидные данные: data: Field required
+2025-09-23 00:58:56,531 [ERROR] processor.review_processor: ❌ Ошибка при валидации входных данных: Невалидные данные: id: Field required

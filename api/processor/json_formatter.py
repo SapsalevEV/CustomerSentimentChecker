@@ -27,12 +27,12 @@ class JsonFormatter:
             return {item.id: item.text for item in input_data.data}
 
         except json.JSONDecodeError as e:
-            return {"errors": f"Невозможно распарсить JSON: {str(e)}"}
+            raise ValueError(f"Невозможно распарсить JSON: {str(e)}")
         except ValidationError as e:
-            errors = "; ".join([f"{err['loc'][-1]}: {err['msg']}" for err in e.errors()])
-            return {"errors": f"Невалидные данные: {errors}"}
+            error_msg = "; ".join([f"{err['loc'][-1]}: {err['msg']}" for err in e.errors()])
+            raise ValueError(f"Невалидные данные: {error_msg}")
         except Exception as e:
-            return {"errors": f"Ошибка обработки ввода: {str(e)}"}
+            raise ValueError(f"Ошибка обработки ввода: {str(e)}")
 
     @staticmethod
     def format_output(results: List[Dict[str, Any]]) -> Dict[str, Any]:
@@ -83,7 +83,7 @@ class JsonFormatter:
         # Создаём объект вывода
         output_data = OutputData(
             predictions=predictions,
-            errors="; ".join(error_messages) if error_messages else None
+            warnings="; ".join(error_messages) if error_messages else None
         )
 
         # Конвертируем в словарь
