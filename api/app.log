@@ -184,3 +184,48 @@ id
 2025-09-23 00:55:37,555 [WARNING] processor.review_processor: ❌ Ошибка при валидации входных данных: Ошибка обработки ввода: keywords must be strings
 2025-09-23 00:58:40,607 [ERROR] processor.review_processor: ❌ Ошибка при валидации входных данных: Невалидные данные: data: Field required
 2025-09-23 00:58:56,531 [ERROR] processor.review_processor: ❌ Ошибка при валидации входных данных: Невалидные данные: id: Field required
+2025-09-23 01:48:53,910 [INFO] __main__: Запуск сервера на http://0.0.0.0:8000/docs
+2025-09-23 01:51:10,821 [WARNING] backend.routes: Ошибка валидации: Expecting value: line 1 column 1 (char 0)
+2025-09-23 01:55:38,529 [INFO] __main__: Запуск сервера на http://0.0.0.0:8000/docs
+2025-09-23 02:05:04,149 [INFO] __main__: Запуск сервера на http://0.0.0.0:8000/docs
+2025-09-23 02:15:19,410 [INFO] __main__: Запуск сервера на http://0.0.0.0:8000/docs
+2025-09-23 02:18:02,602 [ERROR] backend.app: Unexpected error: 'AnalyzeRequest' object has no attribute 'app'
+Traceback (most recent call last):
+  File "/work/CustomerSentimentChecker/api/.venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/work/CustomerSentimentChecker/api/.venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/work/CustomerSentimentChecker/api/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/work/CustomerSentimentChecker/api/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/work/CustomerSentimentChecker/api/.venv/lib/python3.12/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/work/CustomerSentimentChecker/api/.venv/lib/python3.12/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/work/CustomerSentimentChecker/api/.venv/lib/python3.12/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/work/CustomerSentimentChecker/api/.venv/lib/python3.12/site-packages/starlette/routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/work/CustomerSentimentChecker/api/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/work/CustomerSentimentChecker/api/.venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/work/CustomerSentimentChecker/api/.venv/lib/python3.12/site-packages/starlette/routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/work/CustomerSentimentChecker/api/.venv/lib/python3.12/site-packages/fastapi/routing.py", line 308, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/CustomerSentimentChecker/api/.venv/lib/python3.12/site-packages/fastapi/routing.py", line 219, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/CustomerSentimentChecker/api/backend/routes.py", line 22, in analyze
+    processor = request.app.state.processor
+                ^^^^^^^^^^^
+  File "/work/CustomerSentimentChecker/api/.venv/lib/python3.12/site-packages/pydantic/main.py", line 991, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'AnalyzeRequest' object has no attribute 'app'
+2025-09-23 02:20:41,966 [INFO] __main__: Запуск сервера на http://0.0.0.0:8000/docs
+2025-09-23 02:30:27,316 [INFO] __main__: Запуск сервера на http://0.0.0.0:8000/docs
+2025-09-23 02:31:02,785 [INFO] backend.routes: Получен запрос на анализ: 1 отзывов

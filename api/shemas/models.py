@@ -1,6 +1,9 @@
 
-from typing import List, Optional
-from pydantic import Field, BaseModel, ConfigDict, field_validator
+from typing import List, Optional, Dict, Any
+from pydantic import Field, BaseModel, ConfigDict
+
+class AnalyzeRequest(BaseModel):
+    data : List[Dict[str, Any]]
 
 
 class InputItem(BaseModel):
