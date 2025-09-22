@@ -21,10 +21,8 @@ class JsonFormatter:
                 data_dict = json.loads(user_prompts)
             else:
                 data_dict = user_prompts
-
             # Валидируем с помощью Pydantic
             input_data = InputData(**data_dict)
-
             # Преобразуем в {id: text}
             return {item.id: item.text for item in input_data.data}
 

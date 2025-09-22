@@ -29,7 +29,7 @@ class YaReviewProcessor:
             self,
             system_prompt: str,
             user_prompts: str,
-            max_workers: int = 2
+            max_workers: int = 4
     ) -> Dict:
         """
         Параллельная обработка с помощью потоков.
@@ -41,7 +41,9 @@ class YaReviewProcessor:
         user_prompts_formatted = self.formatter.format_input(user_prompts)
         logger.debug("✅ Получен корректный формат данных.")
         if "errors" in user_prompts_formatted.keys():
-            return self.formatter.format_output(user_prompts_formatted)
+            logger.warning(f'❌ Ошибка при обработке: {user_prompts_formatted["errors"]}')
+            results.append(user_prompts_formatted)
+            return self.formatter.format_output(results)
 
         # запускаем обработку в потоках
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
