@@ -1,4 +1,3 @@
-# backend/routes.py
 from fastapi import APIRouter, Request, HTTPException
 from fastapi.responses import JSONResponse
 import logging
@@ -6,17 +5,22 @@ import logging
 from processor.json_formatter import JsonFormatter
 from processor.prompts import TOPICS_SENTIMENTS_PROMPT
 from shemas.models import AnalyzeRequest
+from utils.time_util import log_async_execution_time
 
 router = APIRouter()
 
-# Настройка логгера
 logger = logging.getLogger(__name__)
 
-# Эти объекты будут переданы через зависимость или созданы здесь
+# объект для форматирования ответов
 formatter = JsonFormatter()
+
+@router.get("/health")
+async def health():
+    return {"status": "ok"}
 
 
 @router.post("/analyze", response_model=dict)
+@log_async_execution_time
 async def analyze(
         request_body: AnalyzeRequest,
         request: Request
