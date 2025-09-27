@@ -16,9 +16,4 @@ def create_app():
             content={"predictions": [], "errors": "Internal error"}
         )
 
-
-    @app.get("/health")
-    async def health():
-        return {"status": "ok"}
-
     return app

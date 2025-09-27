@@ -3,7 +3,7 @@ import os
 import logging
 
 # Загружаем переменные окружения
-load_dotenv()
+load_dotenv(dotenv_path=".env")
 
 # Настраиваем логгер
 logging.basicConfig(
@@ -26,6 +26,7 @@ from backend.routes import router
 # Загружаем конфигурацию
 FOLDER_ID = os.getenv("YANDEX_CLOUD_FOLDER")
 YA_API_KEY = os.getenv("YA_GPT_API_KEY")
+print(FOLDER_ID)
 
 if not FOLDER_ID or not YA_API_KEY:
     logger.critical("Не заданы YANDEX_CLOUD_FOLDER или YA_GPT_API_KEY")
@@ -40,10 +41,8 @@ processor = YaReviewProcessor(
 
 # Создаём приложение
 app = create_app()
-# Кладём процессор в состояние приложения
-app.state.processor = processor
 
-# Монтируем роутер
+app.state.processor = processor
 app.include_router(router)
 
 if __name__ == "__main__":
