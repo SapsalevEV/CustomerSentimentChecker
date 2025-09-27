@@ -32,3 +32,14 @@ TypeError: BaseModel.model_dump() got an unexpected keyword argument 'utf8'
 2025-09-26 23:22:40,187 [INFO] __main__: Запуск сервера на http://0.0.0.0:8000/docs
 2025-09-26 23:22:43,654 [INFO] backend.routes: Получен запрос на анализ: 10 отзывов
 2025-09-26 23:22:47,687 [INFO] utils.time_util: ✅ [ASYNC] 'analyze' завершён за 4.03 сек.
+2025-09-27 12:39:38,085 [INFO] __main__: Запуск сервера на http://0.0.0.0:8000/docs
+2025-09-27 12:39:55,769 [INFO] backend.routes: Получен запрос на анализ: 10 отзывов
+2025-09-27 12:39:59,552 [INFO] utils.time_util: ✅ [ASYNC] 'analyze' завершён за 3.78 сек.
+2025-09-27 12:40:13,699 [INFO] backend.routes: Получен запрос на анализ: 1 отзывов
+2025-09-27 12:40:14,474 [INFO] utils.time_util: ✅ [ASYNC] 'analyze' завершён за 0.78 сек.
+2025-09-27 18:27:42,446 [INFO] __main__: Запуск сервера на http://0.0.0.0:8000/docs
+2025-09-27 18:31:22,743 [INFO] backend.routes: Получен запрос на анализ: 2 отзывов
+2025-09-27 18:31:24,185 [INFO] utils.time_util: ✅ [ASYNC] 'analyze' завершён за 1.44 сек.
+2025-09-27 21:59:29,553 [INFO] __main__: Запуск сервера на http://0.0.0.0:8000/docs
+2025-09-27 22:01:28,576 [INFO] backend.routes: Получен запрос на анализ: 2 отзывов
+2025-09-27 22:01:30,163 [INFO] utils.time_util: ✅ [ASYNC] 'analyze' завершён за 1.59 сек.

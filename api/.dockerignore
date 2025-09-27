@@ -1,0 +1,14 @@
+.venv/
+.gigaide
+.idea
+.gitignore
+api.iml
+.env.old
+.env
+__pycache__/
+*.pyc
+.git
+*.log
+Dockerfile
+.dockerignore
+README.md

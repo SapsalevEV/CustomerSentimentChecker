@@ -66,9 +66,10 @@ class YaReviewProcessor:
             logger.error(f'❌ Ошибка при валидации входных данных: {e}')
             results.append({"errors": str(e)})
 
-        # возвращаем текст в нужном формате
+        # возвращаем текст в нужном формате сортированным по id (в многопоточном режиме будут не по порядку)
         logger.debug('✅ Получены результаты обработки.')
-        return self.formatter.format_output(results)
+        sorted_results = sorted(results, key=lambda d: next(iter(d.keys())))
+        return self.formatter.format_output(sorted_results)
 
 
 
