@@ -18,7 +18,7 @@ class JsonFormatter:
         try:
             # Парсим JSON
             if isinstance(user_prompts, str):
-                data_dict = json.loads(user_prompts)
+                data_dict = json.loads(user_prompts, encoding='utf-8')
             else:
                 data_dict = user_prompts
             # Валидируем с помощью Pydantic
