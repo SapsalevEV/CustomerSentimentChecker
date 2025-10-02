@@ -1,0 +1,82 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# CI/CD
+.github/
+
+# Docker
+Dockerfile
+.dockerignore
+docker-compose*.yml
+
+# Documentation
+docs/
+*.md
+!README.md
+
+# Environment files (не копируем .env в образ)
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+
+# Database (база будет монтироваться как volume)
+database/*.db
+database/*.db-shm
+database/*.db-wal
+
+# Development scripts
+run_server.sh
+run_server.bat
+run_server.ps1
+
+# Tests
+tests/
+pytest.ini
+.coveragerc
+
+# Alembic (миграции выполняются отдельно)
+# Оставляем alembic.ini и папку alembic/ для возможности запуска миграций
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+.cache/
