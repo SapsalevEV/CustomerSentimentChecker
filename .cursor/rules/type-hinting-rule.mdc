@@ -1,6 +1,0 @@
----
-description: 
-globs: **/*.py
-alwaysApply: false
----
-- **Type Hinting:** Strictly use the `typing` module. All functions, methods, and class members must have type annotations.
