@@ -149,7 +149,7 @@ def insert_reviews(conn: sqlite3.Connection, rows: Iterable[Dict[str, Any]]) -> 
     """Insert reviews from input JSON."""
     data: List[Tuple[int, str, str, str, str]] = []
     for r in rows:
-        rid = int(r["id"])
+        rid = int(r["review_id"])
         text = str(r["text"])
         date_raw = str(r["date"])
         review_date = ddmmyyyy_to_iso(date_raw)
@@ -193,13 +193,17 @@ def insert_annotations(
             )
 
 
-def main() -> None:
+def main(input_reviews, input_annotations, output_db) -> None:
     """Entry point."""
-    args = parse_args()
-    reviews = load_json(args.input_reviews)
-    ann = load_json(args.input_annotations)
+    # Convert string paths to Path objects if needed
+    input_reviews = Path(input_reviews) if isinstance(input_reviews, str) else input_reviews
+    input_annotations = Path(input_annotations) if isinstance(input_annotations, str) else input_annotations
+    output_db = Path(output_db) if isinstance(output_db, str) else output_db
+    
+    reviews = load_json(input_reviews)
+    ann = load_json(input_annotations)
 
-    with sqlite3.connect(args.output_db) as conn:
+    with sqlite3.connect(output_db) as conn:
         conn.execute("PRAGMA foreign_keys = ON;")
         ensure_schema(conn)
         insert_reviews(conn, reviews)
@@ -208,6 +212,7 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
-
+    main(r'D:\Projects\CustomerSentimentChecker\backend\json\customer_reviews.json',
+    r'D:\Projects\CustomerSentimentChecker\backend\json\llm_results_banki_i_sravni.json',
+    r'D:\Projects\CustomerSentimentChecker\backend\customer_reviews.db')
 

@@ -1,6 +1,0 @@
----
-description: 
-globs: **/tests/*.py
-alwaysApply: false
----
-- **Thorough Unit Testing:** Aim for high test coverage (90% or higher) using `pytest`. Test both common cases and edge cases.

@@ -1,6 +1,0 @@
----
-description: 
-globs: **/*.py
-alwaysApply: false
----
-- **Asynchronous Programming:** Prefer `async` and `await`

@@ -1,6 +1,0 @@
----
-description: 
-globs: **/tests/*.py
-alwaysApply: false
----
-- **Testing Framework:** `pytest`

@@ -1,6 +1,0 @@
----
-description: 
-globs: **/*.py
-alwaysApply: false
----
-- **Logging:** Employ the `logging` module judiciously to log important events, warnings, and errors.

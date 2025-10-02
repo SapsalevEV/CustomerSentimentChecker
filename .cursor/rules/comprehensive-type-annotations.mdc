@@ -1,6 +1,0 @@
----
-description: 
-globs: **/*.py
-alwaysApply: false
----
-- **Comprehensive Type Annotations:** All functions, methods, and class members must have type annotations, using the most specific types possible.

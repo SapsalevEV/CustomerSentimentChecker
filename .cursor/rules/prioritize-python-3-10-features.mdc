@@ -1,6 +1,0 @@
----
-description: 
-globs: **/*.py
-alwaysApply: false
----
-- **Prioritize new features in Python 3.10+**.

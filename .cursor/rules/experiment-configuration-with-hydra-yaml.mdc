@@ -1,6 +1,0 @@
----
-description: 
-globs: **/configs/*.yaml
-alwaysApply: false
----
-- **Experiment Configuration:** Use `hydra` or `yaml` for clear and reproducible experiment configurations.
