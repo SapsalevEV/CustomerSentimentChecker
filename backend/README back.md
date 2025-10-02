@@ -27,7 +27,6 @@
 - **[CHANGELOG_API_v2.md](./CHANGELOG_API_v2.md)** - История изменений API
 
 **Live документация:**
-- Staging: http://89.23.99.74:8000/docs
 - Production: http://193.233.102.193:8000/docs
 
 ---
@@ -35,16 +34,6 @@
 ## 🛠️ Deployment & DevOps
 
 ### CI/CD Pipeline
-
-Проект использует **двухэтапный workflow**:
-
-```
-develop → STAGING (89.23.99.74)
-   ↓
-  test
-   ↓
-main → PRODUCTION (193.233.102.193)
-```
 
 ### Guides
 
@@ -159,39 +148,6 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 docker-compose up --build
 ```
 
-### 2. Deploy на Staging
-
-```bash
-git checkout develop
-git add .
-git commit -m "feat: new feature"
-git push origin develop
-
-# Автоматический деплой на 89.23.99.74
-# Проверить: http://89.23.99.74:8000/docs
-```
-
-### 3. Deploy на Production
-
-```bash
-# После тестирования на staging
-git checkout main
-git merge develop
-git push origin main
-
-# Автоматический деплой на 193.233.102.193
-# Проверить: http://193.233.102.193:8000/docs
-```
-
----
-
-## 📞 Support & Links
-
-- **GitHub Repository**: https://github.com/SapsalevEV/actionable-sentiment-backend
-- **API Docs (Staging)**: http://89.23.99.74:8000/docs
-- **API Docs (Production)**: http://193.233.102.193:8000/docs
-
----
 
 ## 📝 Contributing
 

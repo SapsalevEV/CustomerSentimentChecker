@@ -27,7 +27,6 @@ npm install
 
 ```bash
 # Backend API
-VITE_API_BASE_URL="http://72.56.64.34:8000"
 
 # Supabase (опционально, legacy)
 VITE_SUPABASE_PROJECT_ID="..."
@@ -198,25 +197,6 @@ import { useFilters } from "@/contexts/AppDataProvider";
 ## Тестирование API
 
 ```bash
-# Проверка здоровья API
-curl http://72.56.64.34:8000/health
-
-# Получение конфигурации
-curl http://72.56.64.34:8000/api/config
-
-# Получение данных дашборда
-curl -X POST http://72.56.64.34:8000/api/dashboard/overview \
-  -H "Content-Type: application/json" \
-  -d '{
-    "date_range": {
-      "from": "2025-01-01T00:00:00Z",
-      "to": "2025-01-31T23:59:59Z"
-    },
-    "filters": {
-      "sources": [],
-      "products": []
-    }
-  }'
 ```
 
 ## Добавление нового API endpoint
